@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #2196F3;
+    --secondary-color: #1976D2;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #F44336;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+.main-container {
+    display: grid;
+    min-height: 100vh;
+    gap: 20px;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    padding: 20px;
+}
+
+.sidebar {
+    display: grid;
+    grid-area: sidebar;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "branding"
+        "navigation";
+    padding: 20px;
+}
+
+.branding {
+    grid-area: branding;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.branding h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.navigation {
+    grid-area: navigation;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Header Styles */
+.header {
+    display: grid;
+    grid-area: header;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+}
+
+.notifications {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.primary-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.main-content {
+    grid-area: main-content;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "card-container announcements"
+        "card-container trending";
+}
+
+.card-container {
+    display: grid;
+    gap: 20px;
+    grid-area: card-container;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.temp-display, .humidity-display, .usage-display, .status-display, .aqi-display, .fan-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.temp, .humidity, .usage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.trend {
+    font-size: 0.9rem;
+}
+
+.trend.positive {
+    color: var(--success-color);
+}
+
+.trend.negative {
+    color: var(--danger-color);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-btn {
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.humidity-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.humidity-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: var(--success-color);
+    color: white;
+}
+
+.aqi.good {
+    color: var(--success-color);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotating {
+    animation: rotate 2s linear infinite;
+}
+
+.announcements, .trending {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.announcement, .trending-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.announcement:last-child, .trending-item:last-child {
+    border-bottom: none;
+}
+
+.warning { color: var(--warning-color); }
+.info { color: var(--primary-color); }
+.success { color: var(--success-color); }
+
+.zone-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+}
+
+.zone-indicator.active {
+    background-color: var(--success-color);
+}
+
+.zone-info h4 {
+    margin-bottom: 5px;
+}
+
+.zone-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main-content";
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "card-container"
+            "announcements"
+            "trending";
+    }
+}

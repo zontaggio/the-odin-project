@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC IoT Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="branding">
+                <span class="material-icons">ac_unit</span>
+                <h1>HVAC Control</h1>
+            </div>
+            <div class="navigation">
+                <a href="#" class="nav-item active">
+                    <span class="material-icons">dashboard</span>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">device_thermostat</span>
+                    Temperature
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">water_drop</span>
+                    Humidity
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">schedule</span>
+                    Schedules
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">settings</span>
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class="header">
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Search devices, zones, or settings...">
+            </div>
+            <div class="notifications">
+                <span class="material-icons">notifications</span>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/40" alt="User Avatar" class="avatar">
+                <span>John Smith</span>
+            </div>
+            <div class="user-actions">
+                <button class="primary-btn">
+                    <span class="material-icons">add</span>
+                    Add Device
+                </button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="card-container">
+                <div class="card">
+                    <h3>Main Floor Temperature</h3>
+                    <div class="temp-display">
+                        <span class="temp">72°F</span>
+                        <span class="trend positive">↑ 1.5°F</span>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn"><span class="material-icons">remove</span></button>
+                        <span>Set: 72°F</span>
+                        <button class="control-btn"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Humidity Level</h3>
+                    <div class="humidity-display">
+                        <span class="humidity">45%</span>
+                        <div class="humidity-bar">
+                            <div class="humidity-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Energy Usage</h3>
+                    <div class="usage-display">
+                        <span class="usage">4.2 kWh</span>
+                        <span class="trend negative">↓ 12%</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>System Status</h3>
+                    <div class="status-display">
+                        <span class="status-badge active">Cooling</span>
+                        <span class="efficiency">92% Efficient</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Air Quality</h3>
+                    <div class="aqi-display">
+                        <span class="aqi good">Good</span>
+                        <span>PM2.5: 12 µg/m³</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Fan Speed</h3>
+                    <div class="fan-display">
+                        <span class="material-icons rotating">fan</span>
+                        <span>Medium (Level 2)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="announcements">
+                <h3>System Alerts</h3>
+                <div class="announcement">
+                    <span class="material-icons warning">warning</span>
+                    <div class="alert-content">
+                        <h4>Filter Change Required</h4>
+                        <p>Replace HVAC filter within 5 days</p>
+                    </div>
+                </div>
+                <div class="announcement">
+                    <span class="material-icons info">info</span>
+                    <div class="alert-content">
+                        <h4>Maintenance Due</h4>
+                        <p>Schedule annual maintenance check</p>
+                    </div>
+                </div>
+                <div class="announcement">
+                    <span class="material-icons success">check_circle</span>
+                    <div class="alert-content">
+                        <h4>System Optimization</h4>
+                        <p>Auto-tuning completed successfully</p>
+                    </div>
+                </div>
+            </div>
+            <div class="trending">
+                <h3>Zone Status</h3>
+                <div class="trending-item">
+                    <span class="zone-indicator active"></span>
+                    <div class="zone-info">
+                        <h4>Living Room</h4>
+                        <p>73°F | 46% Humidity</p>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="zone-indicator"></span>
+                    <div class="zone-info">
+                        <h4>Bedroom</h4>
+                        <p>70°F | 42% Humidity</p>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="zone-indicator active"></span>
+                    <div class="zone-info">
+                        <h4>Kitchen</h4>
+                        <p>74°F | 48% Humidity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
